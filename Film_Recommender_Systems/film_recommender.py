@@ -9,7 +9,6 @@ from sklearn.metrics.pairwise import cosine_similarity
 def load_data_files():
     movies = pd.read_csv('./Film_Recommender_Systems/CSV/movies.csv')
     tags = pd.read_csv('./Film_Recommender_Systems/CSV/tags.csv')
-    #ratings = pd.read_csv('./CSV/ratings.csv')
     return movies, tags
 
 
