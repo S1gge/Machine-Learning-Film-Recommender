@@ -20,24 +20,20 @@ git clone https://github.com/S1gge/Machine-Learning-Film-Recommender
 
 - **scikit-learn**
 
+### ⚙️ If you don't have it yet, install manually:
 ```bash
 pip install pandas numpy scikit-learn
 ```
 
-### 🗂️ Prepare the CSV files
-Make sure the following files are in the correct folder:
+### 🗂️ Navigate into the project folder:
 ```bash
-./Film_Recommender_Systems/CSV/movies.csv
-./Film_Recommender_Systems/CSV/tags.csv
+cd your-repository-name
 ```
 
 ## ▶️ Run the program.
 ```bash
 python film_recommender.py
 ```
-
-## 📢 Notes
-If you get an error about missing files, check that the CSV files are in the correct location.
 
 ## 💡Conclusion.
 This recommender system is a simple but effective way to suggest movies based on the similarity of their descriptions. By using text vectorization techniques like CountVectorizer and TfidfTransformer, the system processes movie genres and tags to generate useful recommendations based on cosine similarity. The program is easy to install and use and can be extended to accommodate more complex recommendation techniques or additional data sources in the future.
