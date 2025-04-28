@@ -84,10 +84,10 @@ if __name__ == '__main__':
     similarity_score = make_model(movies_filtered)
 
     while True:
-        movie_name = input("\nEnter a movie name: ")
-        print("\nYou might be intrested in:\n")
+        movie_name = input("\n🔍 Enter a movie name: ")
+        print("\n🎬 You might be intrested in:\n")
         main(movie_name, movies_filtered, similarity_score)
-        choice = input("\nDo you want more recommendations? (Y/N) ")
+        choice = input("\n❓ Do you want more recommendations? (Y/N) ")
         if choice == "N" or choice == "n":
             break
-    print("\nThank you for this time!\n")
+    print("\n🫶 Thank you for this time!\n")
