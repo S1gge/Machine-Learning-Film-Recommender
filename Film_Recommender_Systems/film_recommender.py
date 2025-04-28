@@ -7,8 +7,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 
 def load_data_files():
-    movies = pd.read_csv('./Film_Recommender_Systems/CSV/movies.csv')
-    tags = pd.read_csv('./Film_Recommender_Systems/CSV/tags.csv')
+    movies = pd.read_csv('./CSV/movies.csv')
+    tags = pd.read_csv('./CSV/tags.csv')
     return movies, tags
 
 
