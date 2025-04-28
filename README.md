@@ -10,7 +10,7 @@ This film recommender system suggests movies based on the similarity of movie de
 git clone https://github.com/S1gge/Machine-Learning-Film-Recommender
 ```
 
-### 📜 Ensure the following requirements are installed:
+### 📜 Ensure the following dependencies are installed:
 
 - **Python 3.8** or higher
 
@@ -20,10 +20,8 @@ git clone https://github.com/S1gge/Machine-Learning-Film-Recommender
 
 - **scikit-learn**
 
-All dependencies can be installed via **requirements.txt**
-
 ```bash
-pip install -r requirements.txt
+pip install pandas numpy scikit-learn
 ```
 
 ### 🗂️ Prepare the CSV files
