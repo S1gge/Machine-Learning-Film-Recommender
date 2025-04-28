@@ -1,13 +1,11 @@
 import pandas as pd
 import numpy as np
-import os
-from functools import lru_cache
+
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer, TfidfVectorizer
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-@lru_cache
 def load_data_files():
     movies = pd.read_csv('./Film_Recommender_Systems/CSV/movies.csv')
     tags = pd.read_csv('./Film_Recommender_Systems/CSV/tags.csv')
@@ -60,7 +58,8 @@ def recommend(movie_name, movies_filtered, similarity_score):
     movies_filtered_lower = movies_filtered['movie title'].str.lower()
     
     if movie_name_lower not in movies_filtered_lower.values:
-        return "Movie not found"
+        return "❌ Movie not found. Please try a different title."
+
     
     index = movies_filtered[movies_filtered_lower == movie_name_lower].index[0]
 
@@ -72,25 +71,24 @@ def recommend(movie_name, movies_filtered, similarity_score):
         item.append(temp_df["movie title"])
         item.append(temp_df["year"])
         data.append(item)
-        df_output = pd.DataFrame(data, columns=['Movie Title', 'Release Year'])
-    return df_output
+    df_output = pd.DataFrame(data, columns=['Movie Title', 'Release Year'])
+    return df_output.to_string(index=False)
 
-def main(movie_name):
-    movies, tags = load_data_files()
-    movies_filtered = extract_features(movies, tags)
-    similarity_score = make_model(movies_filtered)
+def main(movie_name, movies_filtered, similarity_score):
     print(recommend(movie_name, movies_filtered, similarity_score))
 
 if __name__ == '__main__':
     print("\n***** Welcome To Film Recommender *****")
-    
+
+    movies, tags = load_data_files()
+    movies_filtered = extract_features(movies, tags)
+    similarity_score = make_model(movies_filtered)
+
     while True:
         movie_name = input("\nEnter a movie name: ")
         print("\nYou might be intrested in:\n")
-        main(movie_name)
-        choice = input("\nDo you want to try again? (Y/N) ")
+        main(movie_name, movies_filtered, similarity_score)
+        choice = input("\nDo you want more recommendations? (Y/N) ")
         if choice == "N" or choice == "n":
             break
-        os.system('cls')
-    os.system('cls')
     print("\nThank you for this time!\n")
