@@ -1,13 +1,11 @@
 # 🎬 Film Recommener System<br>
----
+
 ## Introduction<br>
----
 This film recommender system suggests movies based on the similarity of movie descriptions, which are generated using the movie's genre and tags. The system uses the CountVectorizer and TfidfTransformer from sklearn to process and transform text data into a format that can be used to calculate the cosine similarity between movies.
 
 
 
 ## 🚀 How to Start?<br>
----
 
 ### Clone the repository:
 ```bash
